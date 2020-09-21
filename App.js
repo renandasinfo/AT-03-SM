@@ -11,11 +11,6 @@ import {StyleSheet, Text, View,Button,TouchableOpacity,TextInput} from 'react-na
 
 export default function  App () {
 
-  state={
-    Criança:false,
-    Adulto:false,
-    Idoso:false
-  }
   
   
 
@@ -23,53 +18,40 @@ export default function  App () {
     <View style={[styles.child1]}>
     <Text style={{ fontSize: 20,fontWeight:'bold', color:"#333333"}}>                   Calculadora de imc </Text>
     <View style={[styles.views]}>
-    
+    <Text>{'\n'}</Text>
     <TextInput style={{ fontSize: 15, color:"#333333"}}>         Qual seu peso: </TextInput>
     <TextInput style={{ fontSize: 15, color:"#333333"}}>         Qual sua altura: </TextInput>
-    <CheckBox checar = {this.state.Criança}
-    onPress={() => this.umPressionado()}
+    <CheckBox checar = {false}
+    onPress={() => this.onPress(checar)}
     />
     <Text>Criança</Text>
-    <CheckBox checar= {this.state.Adulto}
-    onPress={() => this.doisPressionado()}
+    <CheckBox checar= {false}
+    onPress={() => this.onPress(checar)}
     />
     <Text>Adulto</Text>
 
-    <CheckBox checar= {this.state.Idoso}
-    onPress={() => this.tresPressionado()}
+    <CheckBox checar= {false}
+    onPress={() => this.onPress(checar)}
     />
     <Text>Idoso</Text>
       </View>
       
-      
       <Text>{'\n'}</Text>
-    <Text style={{ fontSize: 20,height:100, color:"#333333"}}>                   Resultado IMC: </Text>
+      <Text>{'\n'}</Text>
+    <Text style={{ fontSize: 15,height:100, color:"#333333"}}>                             Resultado IMC: </Text>
     
     
+    <Text style={{ fontSize: 15,height:100, color:"#333333"}}>                             Resultado IMC: </Text>
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-    
-    <TouchableOpacity style={styles.child2} 
-              onPress={() => navigation.navigate('Calculando')}>
-              <Text>Calcular peso</Text>
-          </TouchableOpacity>
+    <View style={[styles.child2]}>
+     <TouchableOpacity style={styles.Botao}>
+      <Text style={[]}> Calcular peso</Text>
+     </TouchableOpacity>
+                
+            </View>
     </View>
     
-     
   );
 }
 
@@ -105,6 +87,15 @@ const styles = StyleSheet.create({
     height: 1000
 
   }, 
+   Botao: {
+    backgroundColor:'#FAFAFA',
+    paddingTop: 8,
+    width: 200,
+    height: 50,
+    borderRadius:40,
+    marginTop:30,
+
+  },
   views2: {
     width: 100,
     height: 100,
@@ -116,6 +107,8 @@ const styles = StyleSheet.create({
     backgroundColor:'lightgray',
     shadowColor: '#DEDEDE',
     alignItems: 'center',
+    
+    
   
     width: 200,
     height: 100,
