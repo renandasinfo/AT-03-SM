@@ -3,14 +3,15 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {StyleSheet, Text, View,TextInput,Button} from 'react-native';
 import { Picker } from 'react-native';
-import Calculadora from 'react-native-vector-icons/FontAwesome';               
+import { State } from 'react-native-gesture-handler';
+import Calcu from 'react-native-vector-icons/AntDesign';               
 
 
 export  default function  App () {
  const [peso,setPeso] = React.useState(0.00);
  const [altura,setAltura] = React.useState(0.00);
  const [imc,setImc] = React.useState(0.00);
- const [linguagem,setLinguagem] = React.useState();
+ const [linguagem,setLinguagem] = React.useState(' ');
  console.log('valor armazenado',linguagem)
 
 function calculaImc(peso,altura){
@@ -23,8 +24,8 @@ function calculaImc(peso,altura){
 
   return (
     <View style={styles.views}>
-    <Text style={{ fontSize: 20,fontWeight:'bold', color:"black"}}>           Calculadora de imc </Text>
-    <Calculadora name="calculadora" size={40} color="#FFF"></Calculadora>
+    <Text style={{ fontSize: 20,fontWeight:'bold', color:"black"}}>   Calculadora de imc </Text>
+    <Calcu name="calculator" size={40}></Calcu>
       
     <Text>{'\n'}</Text>
     <TextInput style={{ fontSize: 15, color:"#333333",borderRadius:1}}
@@ -43,13 +44,14 @@ function calculaImc(peso,altura){
     <Picker
     selectedValue={linguagem}
     style={{height: 50, width: 100}}
-    onValueChange={(itemValue) =>
+    onValueChange={(itemValue, itemIndex) =>
     setLinguagem({linguagem: itemValue})
     
+    
 }>
-<Picker.Item label="Criança" value="Criança" />
-<Picker.Item label="Adulto" value="Adulto" />
-<Picker.Item label="Idoso" value="Idoso" />
+<Picker.Item label="Criança" value="crianca" />
+<Picker.Item label="Adulto" value="adulto" />
+<Picker.Item label="Idoso" value="idoso" />
 
 
     </Picker>
@@ -59,7 +61,7 @@ function calculaImc(peso,altura){
     <Text>{'\n'}</Text>
     </View>
     <Text>{'\n'}</Text>
-    
+
   <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(2)} </Text>
 
   
@@ -132,9 +134,21 @@ const styles = StyleSheet.create({
     margin: 20,
     
   },
-  imc:{
-    alignSelf:'center',
-    fontSize:100
+  corpoView:{
+    backgroundColor: '#FAFAFA',
+    width: '100%',
+    height: '25%',
+    margin: 0,
+    padding:28,
+    paddingTop:-10,
+    justifyContent: 'center',
+    alignItems:'center',
+    shadowOffset:{width:4,height:4},
+    shadowOpacity:0.4,
+    shadowColor:"#DEDEDE",
+    shadowRadius:4,
+    elevation: 5,
+    marginBottom:10
   },
   botaoCalcular:{
   backgroundColor:'lightgray',
