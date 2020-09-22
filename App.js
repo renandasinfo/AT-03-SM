@@ -45,11 +45,11 @@ function calculaImc(peso,altura){
     selectedValue={linguagem}
     style={{height: 50, width: 100}}
     onValueChange={(itemValue, itemIndex) =>
-    setLinguagem({linguagem: itemValue})
+    setLinguagem(itemValue)
     
     
 }>
-<Picker.Item label="Criança" value="crianca" />
+<Picker.Item label="Criança" value="criança" />
 <Picker.Item label="Adulto" value="adulto" />
 <Picker.Item label="Idoso" value="idoso" />
 
@@ -62,9 +62,8 @@ function calculaImc(peso,altura){
     </View>
     <Text>{'\n'}</Text>
 
-  <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(2)} </Text>
-
-  
+  <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(3)} </Text>
+  <Text>{'\n'}</Text>
 
             </View>
     
