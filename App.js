@@ -15,7 +15,7 @@ export  default function  App () {
  console.log('valor armazenado',linguagem)
 
 function calculaImc(peso,altura){
-  var resultado = peso / (parseFloat(altura) + parseFloat(altura))
+  var resultado = peso / (altura*altura)
   setImc(resultado)
   console.log('valor do imc:',imc)
   console.log('valor de altura',altura)
@@ -40,12 +40,12 @@ function calculaImc(peso,altura){
     ></TextInput>
     <Text style={{ fontSize: 15,fontWeight:'arial', color:"black"}}>Sua altura </Text>
     <TextInput style={{ fontSize: 15, color:"#333333"}}
-     placeholder="Sua altura:"
+     placeholder="1.75cm:"
      style={styles.views3}
      onChangeText={(valor) => setAltura(valor)}
      value={altura}
     ></TextInput>
-      <Text>{'\n'}</Text>
+      
     <Picker
     selectedValue={linguagem}
     style={{height: 50, width: 100,borderRadius:10}}
@@ -64,10 +64,33 @@ function calculaImc(peso,altura){
     <View style={styles.botaoCalcular}>
     
     <Button title="calcular" color="#333333" backgroundColor="blue" onPress={() => calculaImc(peso,altura)}></Button>
-
     </View>
     <Text>{'\n'}</Text>
-  <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(3)} </Text>
+  <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(2)} </Text>
+  <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
+            <Text style={styles.box}>IMC (kg/m2)  </Text>
+            <Text style={styles.box}>Classificação</Text>
+          </View>
+
+          <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
+            <Text style={styles.box2}>Menor 18,5  </Text>
+            <Text style={styles.box2}>Baixo Peso</Text>
+          </View>
+
+          <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
+            <Text style={styles.box3}>18,5 - 24,9 </Text>
+            <Text style={styles.box3}>Peso Saudável</Text>
+          </View>
+
+          <View style={{  alignItems: 'center' ,flexDirection: 'row'}}>
+            <Text style={styles.box2}>25,0 - 29,9 </Text>
+            <Text style={styles.box2}>Sobrepeso</Text>
+          </View>
+
+          <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
+            <Text style={styles.box3}>Maior 30,0  </Text>
+            <Text style={styles.box3}>Obesidade</Text>
+          </View>
   
             </View>
     
