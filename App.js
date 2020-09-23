@@ -68,28 +68,28 @@ function calculaImc(peso,altura){
     <Text>{'\n'}</Text>
   <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(2)} </Text>
   <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text style={styles.box}>IMC (kg/m2)  </Text>
-            <Text style={styles.box}>Classificação</Text>
+            <Text>IMC (kg/m2)  </Text>
+            <Text >Classificação</Text>
           </View>
 
           <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text style={styles.box2}>Menor 18,5  </Text>
-            <Text style={styles.box2}>Baixo Peso</Text>
+            <Text >Menor 18,5  </Text>
+            <Text >Baixo Peso</Text>
           </View>
 
           <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text style={styles.box3}>18,5 - 24,9 </Text>
-            <Text style={styles.box3}>Peso Saudável</Text>
+            <Text >18,5 - 24,9 </Text>
+            <Text>Peso Saudável</Text>
           </View>
 
           <View style={{  alignItems: 'center' ,flexDirection: 'row'}}>
-            <Text style={styles.box2}>25,0 - 29,9 </Text>
-            <Text style={styles.box2}>Sobrepeso</Text>
+            <Text >25,0 - 29,9 </Text>
+            <Text >Sobrepeso</Text>
           </View>
 
           <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text style={styles.box3}>Maior 30,0  </Text>
-            <Text style={styles.box3}>Obesidade</Text>
+            <Text >Maior 30,0  </Text>
+            <Text>Obesidade</Text>
           </View>
   
             </View>
