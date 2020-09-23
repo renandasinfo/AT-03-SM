@@ -159,28 +159,6 @@ const styles = StyleSheet.create({
     margin: 20,
     
   },
-  views1:{
-    width: 355,
-    height: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  views2:{
-    width: 355,
-    height: 25,
-  },
-  views3:{
-    width: 100,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  views4:{
-    width: 200,
-    height: 200,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   botaoCalcular:{
   backgroundColor:'black',
   elevation: 10,
