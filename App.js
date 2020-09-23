@@ -15,7 +15,7 @@ export  default function  App () {
  console.log('valor armazenado',linguagem)
 
 function calculaImc(peso,altura){
-  var resultado = peso / (altura * altura)
+  var resultado = peso / (parseFloat(altura) + parseFloat(altura))
   setImc(resultado)
   console.log('valor do imc:',imc)
   console.log('valor de altura',altura)
@@ -23,7 +23,7 @@ function calculaImc(peso,altura){
 }
 
   return (
-    <View style={styles.nomeCorpo}>
+    <View style={styles.views}>
     <Text style={{ fontSize: 20,fontWeight:'bold', color:"black"}}>Calculadora de imc </Text>
     
     <Calculadora name="calculator" size={40}></Calculadora>
@@ -32,7 +32,7 @@ function calculaImc(peso,altura){
     <Text style={{ fontSize: 15,fontWeight:'arial', color:"black"}}>Seu peso </Text>
     <TextInput style={{ fontSize: 15, color:"#333333",borderRadius:1}}
     placeholder="Digite seu peso:"
-    style={styles.pesoview}
+    style={styles.views3}
     onChangeText={valor => setPeso(valor)}
     value={peso}
 
@@ -41,7 +41,7 @@ function calculaImc(peso,altura){
     <Text style={{ fontSize: 15,fontWeight:'arial', color:"black"}}>Sua altura </Text>
     <TextInput style={{ fontSize: 15, color:"#333333"}}
      placeholder="Sua altura:"
-     style={styles.alturaview}
+     style={styles.views3}
      onChangeText={(valor) => setAltura(valor)}
      value={altura}
     ></TextInput>
@@ -60,15 +60,15 @@ function calculaImc(peso,altura){
 
 
     </Picker>
-    <Text>{'\n'}</Text>
-    <View style={styles.botaoCalcular}>
-    <Button title="calcular" color="#333333" backgroundColor="blue" onPress={() => calculaImc(peso,altura)}></Button>
-    <Text>{'\n'}</Text>
-    </View>
     
+    <View style={styles.botaoCalcular}>
+    
+    <Button title="calcular" color="#333333" backgroundColor="blue" onPress={() => calculaImc(peso,altura)}></Button>
 
+    </View>
+    <Text>{'\n'}</Text>
   <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(3)} </Text>
-  <Text>{'\n'}</Text>
+  
             </View>
     
      
@@ -87,13 +87,16 @@ const styles = StyleSheet.create({
     paddingTop: 40,
   },
   views:{
-   
-    width: 300,
-    height: 170,
+    
+    width: 320,
+    height: 550,
     margin: 15,
     borderRadius: 6,
     elevation:10,
     alignItems: "center",
+    justifyContent: 'center',
+    flexDirection: "column",
+    paddingTop: 40,
   },
 
     child1: {
@@ -132,37 +135,28 @@ const styles = StyleSheet.create({
     padding:30,
     margin: 20,
     
-
   },
-  alturaview:{
-    height: 50, 
-    width: 100,
-    borderRadius:10, 
-    shadowRadius: 3,
-    padding:10,
-    margin: 10,
-  },
-  pesoview:{
-    height: 50, 
-    width: 100,
-    borderRadius:10, 
-    shadowRadius: 3,
-    padding:10,
-    margin: 10,
-  },
-  nomeCorpo:{
-    
+  views1:{
+    width: 355,
+    height: 100,
+    alignItems: 'center',
     justifyContent: 'center',
-    shadowOpacity: 0.2,
-    borderRadius:10, 
-    shadowRadius: 5,
-    alignItems: "center",
-    elevation:2,
-    backgroundColor:'white',
-    shadowOffset:  { width: 900, height:400 },
-    padding:10,
-    margin: 20,
-    
+  },
+  views2:{
+    width: 355,
+    height: 25,
+  },
+  views3:{
+    width: 100,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  views4:{
+    width: 200,
+    height: 200,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   botaoCalcular:{
   backgroundColor:'black',
