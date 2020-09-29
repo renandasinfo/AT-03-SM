@@ -105,15 +105,15 @@ const styles = StyleSheet.create({
   },
   views:{
     
-    width: 1000,
-    height: 500,
-    margin: 20,
-    borderRadius: 6,
+    width: 400,
+    height: 790,
+    margin: 7,
+    borderRadius: 10,
     elevation:15,
     alignItems: "center",
     justifyContent: 'center',
     flexDirection: "column",
-    paddingTop: 40,
+    paddingTop: 10,
   },
 
     child1: {
