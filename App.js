@@ -3,7 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {StyleSheet, Text, View,TextInput,Button} from 'react-native';
 import { Picker } from 'react-native';
-import { State } from 'react-native-gesture-handler';
 import Calculadora from 'react-native-vector-icons/AntDesign';               
 
 
@@ -57,16 +56,20 @@ function calculaImc(peso,altura){
      style={styles.views3}
      onChangeText={(valor) => setAltura(valor)}
      value={altura}
+     
     ></TextInput>
       
     <Picker
     selectedValue={linguagem}
-    style={{height: 50, width: 100,borderRadius:10}}
+    style={{height: 30, width: 100,borderRadius:10}}
     onValueChange={(itemValue, itemIndex) =>
     setLinguagem(itemValue)
     
     
+    
 }>
+  
+  
 <Picker.Item label="Criança" value="criança" />
 <Picker.Item label="Adulto" value="adulto" />
 <Picker.Item label="Idoso" value="idoso" />
@@ -74,11 +77,12 @@ function calculaImc(peso,altura){
 
     </Picker>
     
+    <Text>{'\n'}</Text>
     <View style={styles.botaoCalcular}>
     
     <Button title="calcular" color="#333333" backgroundColor="blue" onPress={() => calculaImc(peso,altura)}></Button>
     </View>
-    <Text>{'\n'}</Text>
+    
   <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(2)} </Text>
   <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
     
@@ -150,10 +154,10 @@ const styles = StyleSheet.create({
     
   },
   botaoCalcular:{
-  backgroundColor:'black',
+  backgroundColor:'silver',
   elevation: 10,
   borderRadius:10,
-  width: 100,
+  width: 90,
   height: 37,
   alignItems: "center"
   }
