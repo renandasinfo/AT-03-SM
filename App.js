@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   botaoCalcular:{
   backgroundColor:'silver',
-  elevation: 6,
+  elevation: 5,
   borderRadius:10,
   width: 100,
   height: 37,
