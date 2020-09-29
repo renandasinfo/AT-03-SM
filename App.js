@@ -105,11 +105,11 @@ const styles = StyleSheet.create({
   },
   views:{
     
-    width: 320,
-    height: 550,
-    margin: 15,
+    width: 380,
+    height: 600,
+    margin: 20,
     borderRadius: 6,
-    elevation:10,
+    elevation:15,
     alignItems: "center",
     justifyContent: 'center',
     flexDirection: "column",
@@ -155,9 +155,9 @@ const styles = StyleSheet.create({
   },
   botaoCalcular:{
   backgroundColor:'silver',
-  elevation: 10,
+  elevation: 6,
   borderRadius:10,
-  width: 90,
+  width: 100,
   height: 37,
   alignItems: "center"
   }
