@@ -20,6 +20,19 @@ function calculaImc(peso,altura){
   console.log('valor do imc:',imc)
   console.log('valor de altura',altura)
   console.log('valor de peso',peso)
+
+  if (resultado < 18.5) {
+    alert("Baixo Peso!!" + resultado)
+  }
+  else if (resultado >=18.5 && resultado<24.9) {
+    alert("Peso saudável!!" + resultado)
+  }
+  else if (resultado >=25 && resultado<29.9) {
+    alert("Sobrepeso!!" + resultado)
+  }
+  else if (resultado >= 30) {
+    alert("Obesidade!!!" + resultado)
+  }
 }
 
   return (
@@ -68,33 +81,10 @@ function calculaImc(peso,altura){
     <Text>{'\n'}</Text>
   <Text>Peso: {peso} Altura: {altura} IMC: {imc.toFixed(2)} </Text>
   <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text>IMC (kg/m2)  </Text>
-            <Text >Classificação</Text>
-          </View>
-
-          <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text >Menor 18,5  </Text>
-            <Text >Baixo Peso</Text>
-          </View>
-
-          <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text >18,5 - 24,9 </Text>
-            <Text>Peso Saudável</Text>
-          </View>
-
-          <View style={{  alignItems: 'center' ,flexDirection: 'row'}}>
-            <Text >25,0 - 29,9 </Text>
-            <Text >Sobrepeso</Text>
-          </View>
-
-          <View style={{ alignItems: 'center' , flexDirection: 'row'}}>
-            <Text >Maior 30,0  </Text>
-            <Text>Obesidade</Text>
-          </View>
-  
-            </View>
     
-     
+  </View>
+  </View>
+ 
   );
 }
 
